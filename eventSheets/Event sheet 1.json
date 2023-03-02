@@ -1,5 +1,87 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 264118842371952,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [],
+			"sid": 521627434849250
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 648175179843481,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [],
+			"sid": 992285278183169
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 957489909484817,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [],
+			"sid": 521738179900728
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 628466816930168,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [],
+			"sid": 945340751937562
+		},
+		{
+			"functionName": "Move Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "AngleOfMotion",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 871975583826500
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 401413741956764
+		}
+	],
 	"sid": 710562056924304
 }
