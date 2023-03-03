@@ -86,7 +86,8 @@
 			"Player",
 			"Mouse",
 			"Audio",
-			"Bullet"
+			"Bullet",
+			"Enemy"
 		],
 		"subfolders": []
 	},
