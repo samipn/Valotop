@@ -60,6 +60,28 @@
 			],
 			"actions": [],
 			"sid": 945340751937562
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 138756662115787
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Player",
+					"sid": 105171370748776,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 424667656845618
 		}
 	],
 	"sid": 710562056924304

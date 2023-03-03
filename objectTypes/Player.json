@@ -4,39 +4,55 @@
 	"sid": 958997091626420,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 628940161113860
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 788833426295794
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 590202207788429
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 190,
-						"height": 200,
+						"width": 200,
+						"height": 190,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6327468,
+						"imageSpriteId": 5257871,
 						"collisionPoly": {
 							"points": [
+								0.6699999999999999,
 								0.33,
-								0.33,
+								0.77,
 								0.5,
-								0.23,
+								0.6679999999999999,
 								0.668,
-								0.332,
+								0.5,
 								0.63,
-								0.5,
+								0.33599999999999997,
 								0.664,
-								0.664,
+								0.16800000000000004,
 								0.5,
-								0.832,
+								0.18600000000000005,
 								0.186,
-								0.814,
-								0.33,
-								0.5
+								0.5,
+								0.33
 							]
 						},
 						"useCollisionPoly": true,

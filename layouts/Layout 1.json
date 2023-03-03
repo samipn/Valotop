@@ -3565,12 +3565,35 @@
 					},
 					"uid": 125,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "smooth",
+								"allow-sliding": false,
+								"default-controls": true,
+								"enabled": true
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						},
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 908,
 						"y": 470,
-						"width": 173.62262569579696,
-						"height": 182.76065862715473,
+						"width": 182.7606586271547,
+						"height": 173.62262569579698,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
