@@ -123,6 +123,46 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Valorant 1k.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 533744459111966,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Valorant 2k.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 204129558539842,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Valorant 3k.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 830333282029235,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Valorant 4k.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 664066046064147,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Valorant 5k.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 332967062472316,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

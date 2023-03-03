@@ -2,64 +2,14 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 803796046686558,
-					"parameters": {
-						"key": 65
-					}
-				}
-			],
-			"actions": [],
-			"sid": 521627434849250
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 528528992963240,
-					"parameters": {
-						"key": 68
-					}
-				}
-			],
-			"actions": [],
-			"sid": 992285278183169
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 256981280431128,
-					"parameters": {
-						"key": 87
-					}
-				}
-			],
-			"actions": [],
-			"sid": 521738179900728
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 748218081534242,
-					"parameters": {
-						"key": 83
-					}
-				}
-			],
-			"actions": [],
-			"sid": 945340751937562
+			"eventType": "variable",
+			"name": "Killed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 402864242405305
 		},
 		{
 			"eventType": "block",
@@ -96,7 +46,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 228775702081359,
+					"sid": 519650919954300,
 					"parameters": {
 						"audio-file": "Valorant OST - Loading [Main Theme]",
 						"loop": "looping",
@@ -147,6 +97,243 @@
 				}
 			],
 			"sid": 572533505779473
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 273165588694377,
+					"parameters": {
+						"object": "Enemy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Enemy",
+					"sid": 550602718105615,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 733746182214494
+				}
+			],
+			"sid": 598167780610031
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Enemy",
+					"sid": 984892286796917,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Enemy",
+					"sid": 753931697740336
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 171772771328746,
+					"parameters": {
+						"variable": "Killed",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 279874468620026
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 528694248080844,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 776476164795398
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 806453236096041,
+					"parameters": {
+						"audio-file": "Valorant 1k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 646201628013666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 945195731530338,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 394065461549089
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 936287839734258,
+					"parameters": {
+						"audio-file": "Valorant 2k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 139332124147133
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 437429335111683,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 308737546345219
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 335699319685988,
+					"parameters": {
+						"audio-file": "Valorant 3k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 282216972268761
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 139213992588987,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "4"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 756500478102453
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 124009953558986,
+					"parameters": {
+						"audio-file": "Valorant 4k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 899220591598310
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 184338616292373,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 5,
+						"value": "5"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 531244653131208
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 782712998643803,
+					"parameters": {
+						"audio-file": "Valorant 5k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 120618130182244
 		}
 	],
 	"sid": 710562056924304
