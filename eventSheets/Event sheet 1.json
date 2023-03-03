@@ -60,27 +60,6 @@
 			],
 			"actions": [],
 			"sid": 945340751937562
-		},
-		{
-			"functionName": "Move Player",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "AngleOfMotion",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 871975583826500
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 401413741956764
 		}
 	],
 	"sid": 710562056924304
