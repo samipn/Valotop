@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -36,6 +43,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
@@ -45,6 +59,13 @@
 			"type": "behavior",
 			"id": "bound",
 			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -63,7 +84,9 @@
 			"Ground",
 			"TiledBackground",
 			"Player",
-			"Mouse"
+			"Mouse",
+			"Audio",
+			"Bullet"
 		],
 		"subfolders": []
 	},
@@ -91,11 +114,29 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Valorant - Weapon Vandal - Gaming Sound Effect Valorent (HD) Sound Effects.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 415630063605486,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "Valorant OST - Loading [Main Theme].webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 615236812567012,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

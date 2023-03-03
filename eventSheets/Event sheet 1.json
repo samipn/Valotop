@@ -7,9 +7,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 264118842371952,
+					"sid": 803796046686558,
 					"parameters": {
-						"key": 37
+						"key": 65
 					}
 				}
 			],
@@ -22,9 +22,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 648175179843481,
+					"sid": 528528992963240,
 					"parameters": {
-						"key": 39
+						"key": 68
 					}
 				}
 			],
@@ -37,9 +37,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 957489909484817,
+					"sid": 256981280431128,
 					"parameters": {
-						"key": 38
+						"key": 87
 					}
 				}
 			],
@@ -52,9 +52,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 628466816930168,
+					"sid": 748218081534242,
 					"parameters": {
-						"key": 40
+						"key": 83
 					}
 				}
 			],
@@ -82,6 +82,71 @@
 				}
 			],
 			"sid": 424667656845618
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 525368664070885
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 228775702081359,
+					"parameters": {
+						"audio-file": "Valorant OST - Loading [Main Theme]",
+						"loop": "looping",
+						"volume": "-30",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 177561760291615
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 752676766487472,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 200106065214204,
+					"parameters": {
+						"object": "Bullet",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 772227384152044,
+					"parameters": {
+						"audio-file": "Valorant - Weapon Vandal - Gaming Sound Effect Valorent (HD) Sound Effects",
+						"loop": "not-looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 572533505779473
 		}
 	],
 	"sid": 710562056924304
