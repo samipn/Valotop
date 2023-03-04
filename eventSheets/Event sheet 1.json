@@ -334,6 +334,27 @@
 				}
 			],
 			"sid": 120618130182244
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 869112268440286,
+					"parameters": {
+						"object": "wall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 697296125771525
+				}
+			],
+			"sid": 394216652235929
 		}
 	],
 	"sid": 710562056924304
