@@ -1,0 +1,32 @@
+{
+	"name": "Game Over",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 912456356108389,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Respawn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 782257258030028,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				}
+			],
+			"sid": 278366014692070
+		}
+	],
+	"sid": 105868897086230
+}

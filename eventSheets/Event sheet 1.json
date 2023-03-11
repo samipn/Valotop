@@ -54,6 +54,15 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 337412975773337,
+					"parameters": {
+						"variable": "Killed",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 177561760291615
@@ -191,6 +200,14 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "KillBanner",
+					"sid": 134524393524101,
+					"parameters": {
+						"opacity": "100"
+					}
 				}
 			],
 			"sid": 646201628013666
@@ -225,6 +242,14 @@
 						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 141097782739933,
+					"parameters": {
+						"frame-number": "1"
 					}
 				}
 			],
@@ -261,6 +286,14 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 112145126225265,
+					"parameters": {
+						"frame-number": "2"
+					}
 				}
 			],
 			"sid": 282216972268761
@@ -295,6 +328,14 @@
 						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 933323490548951,
+					"parameters": {
+						"frame-number": "3"
 					}
 				}
 			],
@@ -331,6 +372,22 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 555252980938016,
+					"parameters": {
+						"frame-number": "4"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Victory",
+					"sid": 977615214102989,
+					"parameters": {
+						"opacity": "100"
+					}
 				}
 			],
 			"sid": 120618130182244
@@ -355,6 +412,139 @@
 				}
 			],
 			"sid": 394216652235929
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Enemy",
+					"sid": 861309987050496,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Player",
+						"image-point": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Enemy",
+					"sid": 352421812568376,
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 266344644974214
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Enemy",
+					"sid": 137589677881501,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Player",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 224927201860663,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 385973204937180,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy",
+					"sid": 790936045241369,
+					"parameters": {
+						"object": "Bullet",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 768170342963931
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 806889745185091,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Player",
+					"sid": 826692085409769,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 954207268296568
+				}
+			],
+			"sid": 172441203119418
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 341407412389721,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 342746205198315
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 422384799364459,
+					"parameters": {
+						"layout": "Game Over Screen"
+					}
+				}
+			],
+			"sid": 889245812856071
 		}
 	],
 	"sid": 710562056924304

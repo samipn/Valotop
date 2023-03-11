@@ -17,6 +17,11 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 334583771615674
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 996068115811049
 		}
 	],
 	"effectTypes": [],
@@ -54,6 +59,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.8571428571428571,
+								"y": 0.42777777777777776
+							}
+						],
 						"duration": 1
 					}
 				],

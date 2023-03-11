@@ -36,6 +36,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -52,6 +59,13 @@
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -95,7 +109,11 @@
 			"Audio",
 			"Bullet",
 			"Enemy",
-			"wall"
+			"wall",
+			"GameOver",
+			"Respawn",
+			"Victory",
+			"KillBanner"
 		],
 		"subfolders": []
 	},
@@ -107,13 +125,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Layout 1",
+			"Game Over Screen"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Game Over"
 		],
 		"subfolders": []
 	},
