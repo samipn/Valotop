@@ -12,7 +12,13 @@
 			"sid": 513739664786370
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 334583771615674
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
