@@ -3,15 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 958997091626420,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "Health",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 571575672134051
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "EightDir",

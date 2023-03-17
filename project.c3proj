@@ -113,7 +113,9 @@
 			"GameOver",
 			"Respawn",
 			"Victory",
-			"KillBanner"
+			"KillBanner",
+			"Corpse",
+			"HP"
 		],
 		"subfolders": []
 	},
@@ -188,6 +190,14 @@
 					"name": "Valorant 5k.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 332967062472316,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Jett Dying Sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 507398210877533,
 					"file-info": {
 						"purpose": "none"
 					}

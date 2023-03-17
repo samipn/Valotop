@@ -12,6 +12,16 @@
 			"sid": 402864242405305
 		},
 		{
+			"eventType": "variable",
+			"name": "HP",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 455526337121756
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -62,6 +72,15 @@
 					"parameters": {
 						"variable": "Killed",
 						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 908162806961572,
+					"parameters": {
+						"variable": "HP",
+						"value": "100"
 					}
 				}
 			],
@@ -156,6 +175,17 @@
 					"id": "destroy",
 					"objectClass": "Enemy",
 					"sid": 753931697740336
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy",
+					"sid": 433291940127404,
+					"parameters": {
+						"object": "Corpse",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
 				},
 				{
 					"id": "add-to-eventvar",
@@ -481,6 +511,18 @@
 						"image-point": "1",
 						"create-hierarchy": false
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 983202842856209,
+					"parameters": {
+						"audio-file": "Valorant - Weapon Vandal - Gaming Sound Effect Valorent (HD) Sound Effects",
+						"loop": "not-looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 768170342963931
@@ -499,18 +541,26 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Player",
-					"sid": 826692085409769,
-					"parameters": {
-						"instance-variable": "Health",
-						"value": "1"
-					}
-				},
-				{
 					"id": "destroy",
 					"objectClass": "Bullet",
 					"sid": 954207268296568
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 103225499644083,
+					"parameters": {
+						"variable": "HP",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HP",
+					"sid": 946198419061452,
+					"parameters": {
+						"text": "\"HP: \" &HP"
+					}
 				}
 			],
 			"sid": 172441203119418
@@ -519,12 +569,12 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 341407412389721,
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 620938038619856,
 					"parameters": {
-						"instance-variable": "Health",
-						"comparison": 3,
+						"variable": "HP",
+						"comparison": 0,
 						"value": "0"
 					}
 				}
@@ -542,9 +592,47 @@
 					"parameters": {
 						"layout": "Game Over Screen"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 246571579873759,
+					"parameters": {
+						"audio-file": "Jett Dying Sound",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 889245812856071
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 410207978137126,
+					"parameters": {
+						"variable": "HP",
+						"comparison": 0,
+						"value": "20"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-color",
+					"objectClass": "HP",
+					"sid": 114568358595044,
+					"parameters": {
+						"color": "rgbEx(255, 0, 0)"
+					}
+				}
+			],
+			"sid": 153721205905093
 		}
 	],
 	"sid": 710562056924304
