@@ -1,0 +1,31 @@
+{
+	"name": "Start Sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 548471837062361,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 495904563444048,
+					"parameters": {
+						"layout": "Main"
+					}
+				}
+			],
+			"sid": 708396166074224
+		}
+	],
+	"sid": 852930856680794
+}

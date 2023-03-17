@@ -60,9 +60,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0.16862745098039217,
-							1,
-							0,
+							0.3764705882352941,
+							0.7294117647058823,
+							0.5529411764705883,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -131,5 +131,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Game Over"
+	"eventSheet": "Game Over Sheet"
 }

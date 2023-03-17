@@ -1,0 +1,697 @@
+{
+	"name": "Main sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Killed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 402864242405305
+		},
+		{
+			"eventType": "variable",
+			"name": "HP",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 455526337121756
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 138756662115787
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Player",
+					"sid": 105171370748776,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 424667656845618
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 525368664070885
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 519650919954300,
+					"parameters": {
+						"audio-file": "Valorant OST - Loading [Main Theme]",
+						"loop": "looping",
+						"volume": "-30",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 337412975773337,
+					"parameters": {
+						"variable": "Killed",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 908162806961572,
+					"parameters": {
+						"variable": "HP",
+						"value": "100"
+					}
+				}
+			],
+			"sid": 177561760291615
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 752676766487472,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 200106065214204,
+					"parameters": {
+						"object": "Bullet",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 772227384152044,
+					"parameters": {
+						"audio-file": "Valorant - Weapon Vandal - Gaming Sound Effect Valorent (HD) Sound Effects",
+						"loop": "not-looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 572533505779473
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 273165588694377,
+					"parameters": {
+						"object": "Enemy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Enemy",
+					"sid": 550602718105615,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 733746182214494
+				}
+			],
+			"sid": 598167780610031
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Enemy",
+					"sid": 984892286796917,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Enemy",
+					"sid": 753931697740336
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy",
+					"sid": 433291940127404,
+					"parameters": {
+						"object": "Corpse",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 171772771328746,
+					"parameters": {
+						"variable": "Killed",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 279874468620026
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 528694248080844,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 776476164795398
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 806453236096041,
+					"parameters": {
+						"audio-file": "Valorant 1k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "KillBanner",
+					"sid": 134524393524101,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 646201628013666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 945195731530338,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 394065461549089
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 936287839734258,
+					"parameters": {
+						"audio-file": "Valorant 2k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 141097782739933,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 139332124147133
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 437429335111683,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 308737546345219
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 335699319685988,
+					"parameters": {
+						"audio-file": "Valorant 3k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 112145126225265,
+					"parameters": {
+						"frame-number": "2"
+					}
+				}
+			],
+			"sid": 282216972268761
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 139213992588987,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 0,
+						"value": "4"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 756500478102453
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 124009953558986,
+					"parameters": {
+						"audio-file": "Valorant 4k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 933323490548951,
+					"parameters": {
+						"frame-number": "3"
+					}
+				}
+			],
+			"sid": 899220591598310
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 184338616292373,
+					"parameters": {
+						"variable": "Killed",
+						"comparison": 5,
+						"value": "5"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 531244653131208
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 782712998643803,
+					"parameters": {
+						"audio-file": "Valorant 5k",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "KillBanner",
+					"sid": 555252980938016,
+					"parameters": {
+						"frame-number": "4"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Victory",
+					"sid": 977615214102989,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 120618130182244
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 869112268440286,
+					"parameters": {
+						"object": "wall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 697296125771525
+				}
+			],
+			"sid": 394216652235929
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Enemy",
+					"sid": 861309987050496,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Player",
+						"image-point": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Enemy",
+					"sid": 352421812568376,
+					"parameters": {
+						"x": "Player.X",
+						"y": "Player.Y"
+					}
+				}
+			],
+			"sid": 266344644974214
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-los-to-object",
+					"objectClass": "Enemy",
+					"sid": 137589677881501,
+					"behaviorType": "LineOfSight",
+					"parameters": {
+						"object": "Player",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 224927201860663,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 385973204937180,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy",
+					"sid": 790936045241369,
+					"parameters": {
+						"object": "Bullet",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 983202842856209,
+					"parameters": {
+						"audio-file": "Valorant - Weapon Vandal - Gaming Sound Effect Valorent (HD) Sound Effects",
+						"loop": "not-looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 768170342963931
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 806889745185091,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 954207268296568
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 103225499644083,
+					"parameters": {
+						"variable": "HP",
+						"value": "20"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HP",
+					"sid": 946198419061452,
+					"parameters": {
+						"text": "\"HP: \" &HP"
+					}
+				}
+			],
+			"sid": 172441203119418
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 620938038619856,
+					"parameters": {
+						"variable": "HP",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 342746205198315
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 422384799364459,
+					"parameters": {
+						"layout": "Game Over Screen"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 246571579873759,
+					"parameters": {
+						"audio-file": "Jett Dying Sound",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 889245812856071
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 410207978137126,
+					"parameters": {
+						"variable": "HP",
+						"comparison": 0,
+						"value": "20"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-color",
+					"objectClass": "HP",
+					"sid": 114568358595044,
+					"parameters": {
+						"color": "rgbEx(255, 0, 0)"
+					}
+				}
+			],
+			"sid": 153721205905093
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 502138177279766,
+					"parameters": {
+						"object": "healthup"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 328097492724612,
+					"parameters": {
+						"audio-file": "Health sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 737140733298614,
+					"parameters": {
+						"variable": "HP",
+						"value": "40"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HP",
+					"sid": 738162957718248,
+					"parameters": {
+						"text": "\"HP: \" &HP"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "HP",
+					"sid": 663357858254870,
+					"parameters": {
+						"color": "rgb(96, 186, 141)"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "healthup",
+					"sid": 797670666295224
+				}
+			],
+			"sid": 625120158216204
+		}
+	],
+	"sid": 710562056924304
+}

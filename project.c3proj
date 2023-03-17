@@ -116,7 +116,12 @@
 			"KillBanner",
 			"Corpse",
 			"HP",
-			"healthup"
+			"healthup",
+			"Valotop",
+			"Explanantion",
+			"LockIn",
+			"Square",
+			"Credits"
 		],
 		"subfolders": []
 	},
@@ -128,15 +133,17 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1",
-			"Game Over Screen"
+			"Main",
+			"Game Over Screen",
+			"Start"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"Game Over"
+			"Main sheet",
+			"Game Over Sheet",
+			"Start Sheet"
 		],
 		"subfolders": []
 	},
@@ -322,7 +329,7 @@
 		"pixelRounding": true,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-integer-scale",
 		"fullscreenQuality": "low",
 		"viewportFit": "auto",
@@ -367,5 +374,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": null
+	"firstLayout": "Start"
 }
