@@ -115,7 +115,8 @@
 			"Victory",
 			"KillBanner",
 			"Corpse",
-			"HP"
+			"HP",
+			"healthup"
 		],
 		"subfolders": []
 	},
@@ -198,6 +199,14 @@
 					"name": "Jett Dying Sound.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 507398210877533,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Health sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 234172872019652,
 					"file-info": {
 						"purpose": "none"
 					}

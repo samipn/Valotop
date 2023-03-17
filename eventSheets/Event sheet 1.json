@@ -633,6 +633,64 @@
 				}
 			],
 			"sid": 153721205905093
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 502138177279766,
+					"parameters": {
+						"object": "healthup"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 328097492724612,
+					"parameters": {
+						"audio-file": "Health sound",
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 737140733298614,
+					"parameters": {
+						"variable": "HP",
+						"value": "40"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HP",
+					"sid": 738162957718248,
+					"parameters": {
+						"text": "\"HP: \" &HP"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "HP",
+					"sid": 663357858254870,
+					"parameters": {
+						"color": "rgb(96, 186, 141)"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "healthup",
+					"sid": 797670666295224
+				}
+			],
+			"sid": 625120158216204
 		}
 	],
 	"sid": 710562056924304
