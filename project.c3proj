@@ -133,9 +133,9 @@
 	},
 	"layouts": {
 		"items": [
+			"Start",
 			"Main",
-			"Game Over Screen",
-			"Start"
+			"Game Over Screen"
 		],
 		"subfolders": []
 	},
